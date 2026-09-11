@@ -63,12 +63,18 @@ h1 em { color:var(--moss); font-family:Newsreader,Georgia,serif; font-weight:400
 .video-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,3vw,42px); }
 .video-card { min-width:0; border-top:1px solid rgba(238,240,232,.25); padding-top:14px; }
 .video-frame { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:#060907; border:1px solid rgba(238,240,232,.12); }
+.box-library-card .video-frame { aspect-ratio:16/11; }
 .video-frame iframe,.video-frame video { position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:contain; }
 .video-info { display:grid; grid-template-columns:1fr auto; gap:8px 20px; align-items:end; padding:17px 2px 8px; }
 .video-info>span { grid-column:1/-1; color:#818c82; font:500 .66rem/1 "DM Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
 .video-info h3 { margin:0; font-size:clamp(1.15rem,2vw,1.5rem); font-weight:550; letter-spacing:-.025em; }
 .video-info a { color:#aeb7af; font-size:.78rem; border-bottom:1px solid #566057; padding-bottom:4px; }
 .video-info a:hover,.box-source-link:hover { color:white; }
+.video-shortcuts { display:grid; margin-top:12px; border-top:1px solid rgba(238,240,232,.14); }
+.video-shortcuts a { display:grid; grid-template-columns:34px 1fr auto; gap:10px; align-items:center; padding:12px 2px; border-bottom:1px solid rgba(238,240,232,.14); color:#bdc5be; font-size:.82rem; }
+.video-shortcuts a:hover { color:white; }
+.video-shortcuts span { color:#747f76; font:500 .64rem/1 "DM Mono",monospace; }
+.video-shortcuts b { color:var(--signal); font-weight:500; }
 .box-source-link { display:inline-flex; align-items:center; gap:10px; margin-top:42px; color:#aeb7af; font-size:.84rem; border-bottom:1px solid #566057; padding-bottom:5px; }
 .mission-section { display:grid; grid-template-columns:130px 1fr minmax(280px,430px); gap:50px; align-items:start; padding:100px clamp(24px,6.2vw,94px); background:var(--paper-2); border-top:1px solid var(--line); }
 .mission-number { color:#69746c; font:500 .68rem/1 "DM Mono",monospace; }
