@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101713" />
+    <meta
+      name="description"
+      content="ONR-GRAPPLE develops open tools for terrain understanding, motion planning, and intelligent mobility in complex environments."
+    />
+    <title>ONR-GRAPPLE | Off-Road Autonomy Research</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ONR-GRAPPLE home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>ONR—GRAPPLE</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#mission">Mission</a>
+        <a class="github-link" href="https://github.com/onr-grapple" target="_blank" rel="noreferrer">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
+          GitHub
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Open research collective</p>
+          <h1>Autonomy beyond<br /><em>the mapped road.</em></h1>
+          <p class="lede">
+            ONR-GRAPPLE develops open tools for terrain understanding, motion
+            planning, and intelligent mobility in complex environments.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#projects">
+              Explore projects <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-action" href="https://github.com/onr-grapple" target="_blank" rel="noreferrer">
+              View organization <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="terrain-panel" aria-hidden="true">
+          <div class="terrain-label top-label">LAT 38.8895° N</div>
+          <svg viewBox="0 0 560 500" role="presentation">
+            <path class="contour faint" d="M-20 100C88 32 196 42 242 121s149 100 205 12 126-42 151 13" />
+            <path class="contour" d="M-19 148C75 89 178 86 222 153s123 91 185 17 142-53 174 8" />
+            <path class="contour" d="M-12 208c85-56 161-46 213 7s113 82 180 22 138-60 197-9" />
+            <path class="contour accent" d="M-14 265c95-46 170-30 216 22s119 71 181 10 126-62 198-17" />
+            <path class="contour" d="M-13 324c104-43 170-21 220 30s126 60 189 6 122-55 189-6" />
+            <path class="contour faint" d="M-16 389c108-39 178-17 229 27s121 54 180 13 127-52 192-11" />
+            <path class="route-line" d="M44 372C126 321 122 257 207 254s76-105 161-109 99-68 149-81" />
+            <circle class="route-node" cx="44" cy="372" r="7" />
+            <circle class="route-node" cx="517" cy="64" r="7" />
+          </svg>
+          <div class="coordinate-card"><span>ACTIVE ROUTE</span><strong>Terrain model / 04</strong></div>
+          <div class="terrain-label bottom-label">ELEV +1,204 M</div>
+        </div>
+      </section>
+
+      <section class="projects-section" id="projects">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> Project index</p>
+            <h2>Work in the field.</h2>
+          </div>
+          <p>Research code, datasets, and planning systems built for open experimentation and real terrain.</p>
+        </div>
+
+        <div class="project-list">
+          <a class="project-card featured" href="https://droneslab.github.io/CLEAR" target="_blank" rel="noreferrer">
+            <span class="project-number">01</span>
+            <span class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM7 6V3m10 3V3M7 21v-3m10 3v-3M8 10h8M8 14h5"/></svg>
+            </span>
+            <span class="project-content">
+              <span class="project-label">Featured project</span>
+              <strong>CLEAR</strong>
+              <span class="project-description">Explore the CLEAR project, its research, systems, and results.</span>
+              <span class="tag-row"><span>Autonomy</span><span>Research</span><span>Project site</span></span>
+            </span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="project-card" href="https://github.com/onr-grapple/Off-Road-Abstraction" target="_blank" rel="noreferrer">
+            <span class="project-number">02</span>
+            <span class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m12 3 8 4-8 4-8-4 8-4Zm-8 9 8 4 8-4M4 17l8 4 8-4"/></svg>
+            </span>
+            <span class="project-content">
+              <span class="project-label">Core framework</span>
+              <strong>Off-Road Abstraction</strong>
+              <span class="project-description">Terrain decomposition, cost modeling, and planning primitives for large, unstructured environments.</span>
+              <span class="tag-row"><span>Python</span><span>Optimization</span><span>Terrain</span></span>
+            </span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="project-card" href="https://github.com/onr-grapple" target="_blank" rel="noreferrer">
+            <span class="project-number">03</span>
+            <span class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="m7 11 10-5M7 13l10 5"/></svg>
+            </span>
+            <span class="project-content">
+              <span class="project-label">Open source</span>
+              <strong>Organization repositories</strong>
+              <span class="project-description">Browse code, experiments, datasets, and new releases from the ONR-GRAPPLE organization.</span>
+              <span class="tag-row"><span>GitHub</span><span>Code</span><span>Datasets</span></span>
+            </span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="mission-section" id="mission">
+        <div class="mission-number">[ M—01 ]</div>
+        <div><p class="eyebrow"><span></span> Our mission</p><h2>Make difficult terrain computable.</h2></div>
+        <p>We build reusable methods that turn complex terrain into tractable representations—helping autonomous systems plan with more context, efficiency, and confidence.</p>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#top">{ } ONR—GRAPPLE</a>
+      <p>Open research for intelligent mobility.</p>
+      <a href="https://github.com/onr-grapple" target="_blank" rel="noreferrer">GitHub organization <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
