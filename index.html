@@ -39,11 +39,11 @@
       <section class="hero" id="top">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="eyebrow"><span></span> Open research collective</p>
+          <p class="eyebrow"><span></span> AI to Operations · University at Buffalo</p>
           <h1>Autonomy beyond<br /><em>the mapped road.</em></h1>
           <p class="lede">
-            ONR-GRAPPLE develops open tools for terrain understanding, motion
-            planning, and intelligent mobility in complex environments.
+            Generalizable &amp; Robust Activity Planning enabled by Physics-based
+            Abstraction, Simulation &amp; Learning Environments.
           </p>
           <div class="hero-actions">
             <a class="primary-action" href="#projects">
@@ -89,40 +89,54 @@
               <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM7 6V3m10 3V3M7 21v-3m10 3v-3M8 10h8M8 14h5"/></svg>
             </span>
             <span class="project-content">
-              <span class="project-label">Featured project</span>
+              <span class="project-label">Environment abstraction</span>
               <strong>CLEAR</strong>
-              <span class="project-description">Explore the CLEAR project, its research, systems, and results.</span>
-              <span class="tag-row"><span>Autonomy</span><span>Research</span><span>Project site</span></span>
+              <span class="project-description">Graph-theoretic representations transform dense raster terrain into reusable regions for map-scale planning.</span>
+              <span class="tag-row"><span>Terrain graphs</span><span>1200× faster planning</span><span>Project site</span></span>
             </span>
             <span class="project-arrow" aria-hidden="true">↗</span>
           </a>
 
-          <a class="project-card" href="https://github.com/onr-grapple/Off-Road-Abstraction" target="_blank" rel="noreferrer">
+          <a class="project-card" href="#videos">
             <span class="project-number">02</span>
             <span class="project-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="m12 3 8 4-8 4-8-4 8-4Zm-8 9 8 4 8-4M4 17l8 4 8-4"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 3v5m0 8v5M5 12h14M7 7l10 10M17 7 7 17"/><circle cx="12" cy="12" r="4"/></svg>
             </span>
             <span class="project-content">
-              <span class="project-label">Core framework</span>
-              <strong>Off-Road Abstraction</strong>
-              <span class="project-description">Terrain decomposition, cost modeling, and planning primitives for large, unstructured environments.</span>
-              <span class="tag-row"><span>Python</span><span>Optimization</span><span>Terrain</span></span>
+              <span class="project-label">Physics-informed modeling</span>
+              <strong>Human Traversal</strong>
+              <span class="project-description">Mission-ready routes account for metabolic power, terrain grade, body weight, carried load, movement speed, and fatigue recovery.</span>
+              <span class="tag-row"><span>Human energetics</span><span>Terrain</span><span>Weather</span></span>
             </span>
-            <span class="project-arrow" aria-hidden="true">↗</span>
+            <span class="project-arrow" aria-hidden="true">↓</span>
           </a>
 
-          <a class="project-card" href="https://github.com/onr-grapple" target="_blank" rel="noreferrer">
+          <a class="project-card" href="#videos">
             <span class="project-number">03</span>
             <span class="project-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="m7 11 10-5M7 13l10 5"/></svg>
+              <svg viewBox="0 0 24 24"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M4 17V9h12l4 4v4M7 9l2-4h5l2 4"/></svg>
             </span>
             <span class="project-content">
-              <span class="project-label">Open source</span>
-              <strong>Organization repositories</strong>
-              <span class="project-description">Browse code, experiments, datasets, and new releases from the ONR-GRAPPLE organization.</span>
-              <span class="tag-row"><span>GitHub</span><span>Code</span><span>Datasets</span></span>
+              <span class="project-label">Neuro-symbolic modeling</span>
+              <strong>Vehicle Traversal</strong>
+              <span class="project-description">Physics-informed AI models vehicle mobility across complex terrain to produce more robust, executable routes.</span>
+              <span class="tag-row"><span>Vehicle physics</span><span>75% less detour</span><span>Learning</span></span>
             </span>
-            <span class="project-arrow" aria-hidden="true">↗</span>
+            <span class="project-arrow" aria-hidden="true">↓</span>
+          </a>
+
+          <a class="project-card" href="#mission">
+            <span class="project-number">04</span>
+            <span class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="m7 6 10 0M6 8l5 8M18 8l-5 8"/></svg>
+            </span>
+            <span class="project-content">
+              <span class="project-label">Graph machine learning</span>
+              <strong>Course of Action Generation</strong>
+              <span class="project-description">Generate many distinct, robust courses of action and rapidly replan as terrain, weather, obstacles, and adversary information changes.</span>
+              <span class="tag-row"><span>COA generation</span><span>30 ms weather update</span><span>Replanning</span></span>
+            </span>
+            <span class="project-arrow" aria-hidden="true">↓</span>
           </a>
         </div>
       </section>
@@ -183,8 +197,21 @@
 
       <section class="mission-section" id="mission">
         <div class="mission-number">[ M—01 ]</div>
-        <div><p class="eyebrow"><span></span> Our mission</p><h2>Make difficult terrain computable.</h2></div>
-        <p>We build reusable methods that turn complex terrain into tractable representations—helping autonomous systems plan with more context, efficiency, and confidence.</p>
+        <div>
+          <p class="eyebrow"><span></span> The challenge</p>
+          <h2>Plan robust missions under information overload.</h2>
+        </div>
+        <div class="mission-copy">
+          <p>GRAPPLE brings together graph-theoretic environment representations, physics-informed human and vehicle traversal models, and graph machine learning to generate distinct, robust courses of action across missions spanning hundreds of miles.</p>
+          <dl class="program-facts">
+            <div><dt>Program</dt><dd>AI to Operations (AI2OPS)</dd></div>
+            <div><dt>Institution</dt><dd>University at Buffalo</dd></div>
+            <div><dt>Period</dt><dd>Nov. 2023 — Mar. 2027</dd></div>
+            <div><dt>ONR Award</dt><dd>N00014-24-1-2003</dd></div>
+            <div><dt>Principal investigator</dt><dd>Souma Chowdhury</dd></div>
+            <div><dt>Co-investigators</dt><dd>Karthik Dantu · Ehsan Esfahani · Chen Wang</dd></div>
+          </dl>
+        </div>
       </section>
     </main>
 
