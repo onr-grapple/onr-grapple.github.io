@@ -167,3 +167,10 @@ td:first-child { font-weight: 600; }
 .publication-heading h2 { margin: 0 0 14px; font-size: clamp(1.6rem, 3vw, 2.3rem); }
 .publication-heading > a { color: var(--accent); font-size: .85rem; }
 .publication-empty { color: var(--muted); margin: 26px 0 0; font-size: .95rem; }
+
+.publication-entry { margin-top: 30px; max-width: 930px; }
+.publication-entry h3 { margin: 0 0 14px; font: 400 clamp(1.4rem, 2.6vw, 1.8rem)/1.35 Georgia, serif; }
+.publication-entry h3 a, .publication-paper-link { color: var(--accent); }
+.publication-authors, .publication-venue { font-size: .92rem; line-height: 1.7; color: var(--muted); margin: 8px 0; }
+.publication-description { line-height: 1.8; margin: 20px 0; color: var(--ink); }
+.publication-paper-link { display: inline-block; text-decoration: underline; text-underline-offset: 3px; font-size: .9rem; }
