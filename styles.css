@@ -38,7 +38,11 @@ h1 em { color: var(--accent); font-style: normal; }
 .hero-research-figure { max-width: 960px; margin: 46px auto 0; }
 .hero-research-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
 figcaption { margin-top: 12px; font-size: .8rem; line-height: 1.6; color: var(--muted); }
-.program-overview { max-width: var(--width); margin: auto; padding: 80px 24px; display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+.program-overview { width: 100%; max-width: none; margin: 0; padding: 80px 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: start; }
+.program-overview > div { width: 100%; max-width: var(--width); margin: auto; padding: 0 24px; }
+.program-overview .pipeline-figure { width: 100%; max-width: none; margin: 0; }
+.pipeline-figure > a, .pipeline-figure picture { display: block; width: 100%; }
+.program-overview .pipeline-figure img { width: 100%; max-width: none; height: auto; border: 0; }
 h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 .program-overview h2, .section-heading h2, .mission-section h2 { margin: 0; font-size: clamp(2rem, 3.5vw, 3.1rem); line-height: 1.15; letter-spacing: -.035em; }
 .program-overview p:not(.eyebrow) { line-height: 1.85; color: var(--muted); }
@@ -151,8 +155,6 @@ td:first-child { font-weight: 600; }
 .website-qr .qr-download { display: block; margin-top: 12px; text-decoration: underline; text-underline-offset: 3px; }
 @media(max-width: 480px) { .website-qr { flex-direction: column; text-align: center; gap: 16px; } }
 
-.pipeline-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 12px; }
+.pipeline-actions { max-width: var(--width); margin: 12px auto 0; padding: 0 24px; }
 .pipeline-actions figcaption { margin: 0; }
-.pipeline-toggle { flex-shrink: 0; border: 1px solid var(--line); border-radius: 4px; background: white; padding: 8px 12px; color: var(--accent); font: inherit; font-size: .8rem; cursor: pointer; }
-.pipeline-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 680px) { .pipeline-actions { align-items: flex-start; flex-direction: column; } }
