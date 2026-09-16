@@ -158,3 +158,12 @@ td:first-child { font-weight: 600; }
 .pipeline-actions { margin: 12px 0 0; padding: 0; }
 .pipeline-actions figcaption { margin: 0; }
 @media (max-width: 680px) { .pipeline-actions { align-items: flex-start; flex-direction: column; } }
+
+.site-header nav a[aria-current="page"] { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
+.publications-layout { max-width: var(--width); margin: auto; padding: 42px 24px 70px; }
+.publication-module-nav { display: flex; flex-wrap: wrap; gap: 16px 28px; padding-bottom: 32px; border-bottom: 1px solid var(--line); color: var(--accent); font-size: .85rem; line-height: 1.6; }
+.publication-module { padding: 40px 0; border-bottom: 1px solid var(--line); }
+.publication-heading .eyebrow { margin-bottom: 12px; }
+.publication-heading h2 { margin: 0 0 14px; font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.publication-heading > a { color: var(--accent); font-size: .85rem; }
+.publication-empty { color: var(--muted); margin: 26px 0 0; font-size: .95rem; }
