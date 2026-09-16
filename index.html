@@ -56,7 +56,7 @@
 <p>GRAPPLE investigates how to generate diverse, robust courses of action for missions spanning hundreds of miles, under changing terrain, weather, obstacle, and adversary information. The program combines graph-theoretic environment representations with physics-informed human and vehicle mobility models and graph learning for task planning.</p>
 <p>Environment abstraction provides a shared terrain representation. Human and vehicle models describe agent-specific traversal costs. COA generation uses this information to allocate and sequence tasks, then revisits the plan pool when conditions change.</p>
 </div>
-        <figure><a href="assets/images/grapple-workflow.jpg"><img src="assets/images/grapple-workflow.jpg" width="1600" height="900" alt="GRAPPLE workflow connecting environment abstraction, human and vehicle models, and a pool of courses of action" loading="lazy"></a><figcaption>The four-module workflow shown in the supplied GRAPPLE presentations. See the research pages for the context of reported results.</figcaption>
+        <figure class="pipeline-figure"><a href="assets/images/grapple-workflow.gif" aria-label="Open the full-size animated four-module pipeline"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/images/grapple-workflow.jpg"><img id="pipeline-animation" src="assets/images/grapple-workflow.gif" width="1600" height="900" alt="Animated GRAPPLE pipeline: environment abstraction feeds human and vehicle models, which support COA generation; weather-driven replanning feeds back into the environment representation" loading="lazy"></picture></a><div class="pipeline-actions"><figcaption>The four-module workflow, animated from the GRAPPLE presentation. See the research pages for the context of reported results.</figcaption><button class="pipeline-toggle" type="button" aria-controls="pipeline-animation" hidden>Pause animation</button></div>
 </figure>
       </section>
 
@@ -151,5 +151,6 @@
       <p>Open research for intelligent mobility.</p>
       <a href="https://github.com/onr-grapple" target="_blank" rel="noreferrer">GitHub organization <span aria-hidden="true">↗</span></a>
     </footer>
+  <script src="pipeline.js" defer></script>
   </body>
 </html>
