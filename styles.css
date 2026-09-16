@@ -189,3 +189,6 @@ td:first-child { font-weight: 600; }
 
 .team-section-title { max-width: var(--width); margin: 0 auto; padding: 42px 24px 0; font-size: clamp(1.8rem, 3vw, 2.4rem); }
 .team-section-title + .team-layout { padding-top: 30px; }
+
+.team-headshot { position: relative; width: 140px; height: 140px; overflow: hidden; border-radius: 5px; }
+.team-member .team-headshot img { position: absolute; width: 233px; max-width: none; height: auto; left: -46px; top: -65px; border-radius: 0; }
