@@ -1,0 +1,95 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101713"><title>COA Generation | ONR-GRAPPLE</title>
+<meta name="description" content="Diverse task allocations, learned route sequencing, and rapid plan selection after disruption.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="../index.html">{ } ONR—GRAPPLE</a>
+<nav aria-label="Primary navigation"><a href="../index.html#projects">Modules</a><a href="../index.html#videos">Videos</a><a href="../index.html#mission">Team &amp; program</a>
+</nav>
+</header>
+<main id="main">
+<div class="research-hero"><a class="back-link" href="../index.html#projects">← All research modules</a>
+<p class="eyebrow">Module 04 / Multi-agent planning and graph learning</p>
+<h1>COA Generation</h1>
+<p class="research-subtitle">Diverse task allocations, learned route sequencing, and rapid plan selection after disruption.</p>
+<div class="hero-actions"><a class="primary-action" href="#source-video">Watch demonstration</a><a class="text-action" href="../content/ONR_Intro_slides.pptx" download>Introduction slides ↗</a>
+</div>
+</div>
+<div class="research-layout">
+<aside class="contents">
+<p>On this page</p><a href="#abstract">Abstract</a><a href="#section-0">Mission setting and objectives</a><a href="#section-1">Stage 1: multi-objective task allocation</a><a href="#section-2">Stage 2: graph-based task sequencing</a><a href="#section-3">Weather disruption and pool validation</a><a href="#section-4">Computation time versus mission time</a><a href="#figures">Research figures</a><a href="#source-video">Video &amp; chapters</a><a href="#sources">Sources</a>
+</aside>
+<article class="research-body">
+<section id="abstract">
+<p class="eyebrow">Research overview</p>
+<h2>Abstract</h2>
+<p class="abstract">Course-of-action generation combines multi-objective task allocation with graph-based route sequencing. The demonstration constructs a pool of alternative plans for a human scout, a light vehicle, and a heavy vehicle at 29 Palms. When flooding blocks transit corridors, the system checks the precomputed pool and selects a surviving plan, separating expensive initial generation from rapid disruption response.</p>
+</section>
+<section id="section-0">
+<h2>Mission setting and objectives</h2>
+<p>The program asks how to produce many distinct and robust courses of action under information overload from terrain, weather, obstacles, and adversary information. The stated research objective is planning within an hour for missions spanning hundreds of miles.</p>
+<p>The video demonstrates 20 tasks with three heterogeneous agents: a human scout, a light vehicle, and a heavy vehicle. Candidate allocations differ in the use of each agent and in their operational emphasis. The introduction depicts completion rate and diversity as optimization objectives. <a href="#sources">[1, 0:00–1:30; 2, slides 2–3]</a></p>
+</section>
+<section id="section-1">
+<h2>Stage 1: multi-objective task allocation</h2>
+<p>An NSGA-II genetic algorithm assigns task subsets using information from environment abstraction. The displayed pool includes balanced dual-vehicle allocations, greater use of the human scout, and allocations emphasizing the light vehicle. The first-stage display labels its illustrated allocations as achieving 100% completion.</p>
+<p>Diversity matters because a set of different allocations can retain useful alternatives when some routes become unavailable. Allocation chooses which agent handles each task; it is followed by a separate sequencing stage. <a href="#source-video">[1, 0:45–1:15]</a></p>
+</section>
+<section id="section-2">
+<h2>Stage 2: graph-based task sequencing</h2>
+<p>A TAG-MHA graph neural network policy orders the tasks assigned to each agent. The video expands TAG-MHA as <strong>Time-Aware Graph Multi-Head Attention</strong>. The sequencing display describes minimizing travel latency and avoiding deadline breaches over HOPHY terrain waypoints.</p>
+<p>The output is a pool of 20 COAs, subsequently ranked by mission time. The video illustrates plans with different balances of mechanized workload, reconnaissance, sector coverage, and reliance on human traversal. These alternatives expose operational choices beyond a single fastest route. <a href="#source-video">[1, 1:15–2:45]</a></p>
+</section>
+<section id="section-3">
+<h2>Weather disruption and pool validation</h2>
+<p>The disruption scenario introduces flash flooding and road washouts. The display reports five critical transit corridors washed out and 1.3% of the network severed. The system checks which precomputed COAs avoid blocked paths and ranks the survivors.</p>
+<p>Four surviving plans appear in the validation display: COA #02 (24.95 h), #18 (31.63 h), #06 (32.69 h), and #04 (41.37 h). COA #02 becomes the selected resilient plan. The subsequent animation shows its execution while avoiding the blocked corridors. <a href="#source-video">[1, 2:45–4:00]</a></p>
+</section>
+<section id="section-4">
+<h2>Computation time versus mission time</h2>
+<div class="table-wrap">
+<table><caption>Distinct timings reported by the COA demonstration</caption>
+<thead>
+<tr><th>Quantity</th><th>Reported value</th><th>Interpretation</th></tr></thead>
+<tbody>
+<tr><td>Initial pool generation</td><td>Approximately 100 min</td><td>Computation for 20 COAs</td></tr>
+<tr><td>Pool validation after disruption</td><td>34.45 ms</td><td>Replanning latency; excludes rendering and plotting</td></tr>
+<tr><td>Selected resilient makespan</td><td>24.95 h</td><td>Mission duration for COA #02, not computation time</td></tr></tbody></table>
+</div>
+<p>The demonstrated initial generation time is longer than the program’s within-an-hour objective. The millisecond result concerns checking the existing plan pool after disruption; it does not measure generating all plans from scratch. <a href="#sources">[1, 1:30–1:45; 3:15–3:30; 2, slide 2]</a></p>
+</section>
+<section id="figures">
+<h2>Research figures</h2>
+<figure><a href="../assets/images/coa-allocation.jpg"><img src="../assets/images/coa-allocation.jpg" alt="Examples from the NSGA-II task-allocation pool. Video frame at approximately 1:07." loading="lazy" width="1600" height="900"></a><figcaption>Examples from the NSGA-II task-allocation pool. Video frame at approximately 1:07.</figcaption>
+</figure>
+<figure><a href="../assets/images/coa-replanning.jpg"><img src="../assets/images/coa-replanning.jpg" alt="Pool validation after corridor washouts: four surviving COAs and the selected 24.95-hour plan. Video frame at approximately 3:22." loading="lazy" width="1600" height="900"></a><figcaption>Pool validation after corridor washouts: four surviving COAs and the selected 24.95-hour plan. Video frame at approximately 3:22.</figcaption>
+</figure>
+</section>
+<section id="source-video">
+<h2>Module demonstration</h2>
+<p>Full supplied presentation · 4:10. Chapter links open the video at the indicated point. The written sections above provide a companion description of the methods and demonstrations.</p><video controls preload="none" poster="../assets/images/coa-replanning.jpg" aria-label="COA Generation demonstration"><source src="../assets/media/coa.mp4" type="video/mp4">Your browser does not support video. <a href="../assets/media/coa.mp4">Download the demonstration</a>.</video>
+<div class="chapter-list"><a href="../assets/media/coa.mp4#t=45">0:45 · Genetic algorithm task allocation</a><a href="../assets/media/coa.mp4#t=75">1:15 · TAG-MHA sequencing</a><a href="../assets/media/coa.mp4#t=90">1:30 · Pool generation time</a><a href="../assets/media/coa.mp4#t=105">1:45 · Alternative COAs</a><a href="../assets/media/coa.mp4#t=125">2:05 · Mission-time ranking</a><a href="../assets/media/coa.mp4#t=165">2:45 · Flooding and washouts</a><a href="../assets/media/coa.mp4#t=190">3:10 · Pool validation</a><a href="../assets/media/coa.mp4#t=210">3:30 · Selected resilient mission</a>
+</div>
+</section>
+<section id="sources">
+<h2>Sources and research context</h2>
+<ol>
+<li><a href="../assets/media/coa.mp4">Coa_planning_expo.mp4</a>. Supplied GRAPPLE module presentation. Figures reproduced from the video; chapter times are approximate.</li>
+<li><a href="../content/ONR_Intro_slides.pptx" download>ONR introduction slides</a>. Program, research challenge, four-module workflow, and team; slides 1–4.</li>
+</ol>
+<p>Results on this page are attributed to the supplied presentations. The materials do not include full benchmark protocols or bibliographic records for every component.</p>
+</section>
+</article>
+</div>
+<nav class="module-navigation" aria-label="Research modules"><a href="environment.html">01 Environment Abstraction</a><a href="human.html">02 Physics Informed Human Model</a><a href="vehicle.html">03 Neuro-Symbolic Vehicle Model</a><a href="coa.html" aria-current="page">04 COA Generation</a>
+</nav>
+</main>
+<footer><a class="brand" href="../index.html">ONR—GRAPPLE</a>
+<p>University at Buffalo · AI2OPS</p><a href="https://github.com/onr-grapple">GitHub organization ↗</a>
+</footer>
+</body></html>

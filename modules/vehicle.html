@@ -1,0 +1,87 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101713"><title>Neuro-Symbolic Vehicle Model | ONR-GRAPPLE</title>
+<meta name="description" content="Adaptive traversal decisions informed by vehicle mobility and terrain.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="../index.html">{ } ONR—GRAPPLE</a>
+<nav aria-label="Primary navigation"><a href="../index.html#projects">Modules</a><a href="../index.html#videos">Videos</a><a href="../index.html#mission">Team &amp; program</a>
+</nav>
+</header>
+<main id="main">
+<div class="research-hero"><a class="back-link" href="../index.html#projects">← All research modules</a>
+<p class="eyebrow">Module 03 / Vehicle mobility and adaptive navigation</p>
+<h1>Neuro-Symbolic Vehicle Model</h1>
+<p class="research-subtitle">Adaptive traversal decisions informed by vehicle mobility and terrain.</p>
+<div class="hero-actions"><a class="primary-action" href="#source-video">Watch demonstration</a><a class="text-action" href="../content/ONR_Intro_slides.pptx" download>Introduction slides ↗</a>
+</div>
+</div>
+<div class="research-layout">
+<aside class="contents">
+<p>On this page</p><a href="#abstract">Abstract</a><a href="#section-0">Research problem</a><a href="#section-1">Adaptive terrain traversal</a><a href="#section-2">Real-world demonstrations</a><a href="#section-3">Global paths and precipitation</a><a href="#section-4">Reported result and evidence scope</a><a href="#figures">Research figures</a><a href="#source-video">Video &amp; chapters</a><a href="#sources">Sources</a>
+</aside>
+<article class="research-body">
+<section id="abstract">
+<p class="eyebrow">Research overview</p>
+<h2>Abstract</h2>
+<p class="abstract">The vehicle module studies adaptive terrain traversal strategies. The supplied video contrasts a baseline that avoids obstacles with a mobility-aware approach whose decisions change with vehicle speed and obstacle characteristics. Simulated terrain and real-world ditch demonstrations illustrate local navigation behavior, followed by a global planning example in which routes adapt to precipitation.</p>
+</section>
+<section id="section-0">
+<h2>Research problem</h2>
+<p>Classifying every terrain discontinuity as an obstacle can produce unnecessary detours. Conversely, treating every obstacle as traversable can produce infeasible routes. The GRAPPLE introduction names this module the Neuro-Symbolic Vehicle Model and places it within physics-informed AI for human and vehicle traversal.</p>
+<p>The demonstration focuses on the resulting behavior: choosing when a vehicle can traverse an obstacle, when it must avoid one, and how those choices change with speed. The supplied video does not specify the network architecture, symbolic rule set, or training protocol. <a href="#sources">[1; 2, slides 2–3]</a></p>
+</section>
+<section id="section-1">
+<h2>Adaptive terrain traversal</h2>
+<p>Simulation examples include ditches and rocks, an uphill ditch, bumps, flat bedrock, and canyon and desert terrain. A baseline segment is labeled “Always Avoids Regardless of the Speed.” The proposed approach demonstrates alternative traversal behavior in these environments.</p>
+<p>These examples distinguish mobility-dependent obstacles from obstacles that remain untraversable. Later footage explicitly shows continued avoidance of a tree. <a href="#source-video">[1, 1:00–2:00; 3:45–4:00]</a></p>
+</section>
+<section id="section-2">
+<h2>Real-world demonstrations</h2>
+<p>The video includes a manmade ditch and fence setting and a natural snow ditch setting. In the manmade setting, the baseline avoids the obstacle. The proposed approach is shown in subsequent runs, including a slow-vehicle condition explicitly labeled as avoiding the ditch at low speed.</p>
+<p>The comparison illustrates why speed must be part of a traversal decision: an obstacle that can be negotiated under one motion condition may require avoidance under another. The footage demonstrates qualitative behavior; it does not provide a full trial count or success-rate table. <a href="#source-video">[1, 2:00–3:45]</a></p>
+</section>
+<section id="section-3">
+<h2>Global paths and precipitation</h2>
+<p>The final planning example compares baseline paths without precipitation against precipitation-aware paths. Human and vehicle depots and multiple tasks appear on the map, linking local mobility considerations to mission-scale route planning.</p>
+<p>Within the GRAPPLE workflow, vehicle mobility informs agent-specific traversal costs for the environment representation. COA generation then uses the available route information to allocate and sequence tasks across the fleet. <a href="#source-video">[1, 4:00–4:30]</a></p>
+</section>
+<section id="section-4">
+<h2>Reported result and evidence scope</h2>
+<p>The introduction slide reports <strong>75% less detour</strong> for the vehicle module. The supplied introduction and video do not give the full benchmark definition, aggregation procedure, or evaluation sample behind that figure. It is therefore presented as a project-reported overview result, alongside the qualitative demonstrations, rather than as a general guarantee.</p>
+<p>The field footage supports the distinction between speed-dependent traversal and persistent obstacle avoidance. The precipitation map is a separate global-planning demonstration. <a href="#sources">[1; 2, slide 3]</a></p>
+</section>
+<section id="figures">
+<h2>Research figures</h2>
+<figure><a href="../assets/images/vehicle-demo.jpg"><img src="../assets/images/vehicle-demo.jpg" alt="Real-world slow-vehicle condition: the vehicle avoids the ditch at low speed. Video frame at approximately 2:52." loading="lazy" width="1600" height="900"></a><figcaption>Real-world slow-vehicle condition: the vehicle avoids the ditch at low speed. Video frame at approximately 2:52.</figcaption>
+</figure>
+<figure><a href="../assets/images/vehicle-weather.jpg"><img src="../assets/images/vehicle-weather.jpg" alt="Baseline and precipitation-aware global paths. Video frame at approximately 4:22." loading="lazy" width="1600" height="900"></a><figcaption>Baseline and precipitation-aware global paths. Video frame at approximately 4:22.</figcaption>
+</figure>
+</section>
+<section id="source-video">
+<h2>Module demonstration</h2>
+<p>Full supplied presentation · 4:42. Chapter links open the video at the indicated point. The written sections above provide a companion description of the methods and demonstrations.</p><video controls preload="none" poster="../assets/images/vehicle-demo.jpg" aria-label="Neuro-Symbolic Vehicle Model demonstration"><source src="../assets/media/vehicle.mp4" type="video/mp4">Your browser does not support video. <a href="../assets/media/vehicle.mp4">Download the demonstration</a>.</video>
+<div class="chapter-list"><a href="../assets/media/vehicle.mp4#t=48">0:48 · Adaptive traversal strategies</a><a href="../assets/media/vehicle.mp4#t=60">1:00 · Ditch and rock simulations</a><a href="../assets/media/vehicle.mp4#t=120">2:00 · Manmade ditch and fence</a><a href="../assets/media/vehicle.mp4#t=165">2:45 · Low-speed avoidance</a><a href="../assets/media/vehicle.mp4#t=185">3:05 · Natural snow ditch</a><a href="../assets/media/vehicle.mp4#t=225">3:45 · Untraversable tree</a><a href="../assets/media/vehicle.mp4#t=245">4:05 · Precipitation-aware global paths</a>
+</div>
+</section>
+<section id="sources">
+<h2>Sources and research context</h2>
+<ol>
+<li><a href="../assets/media/vehicle.mp4">Vehicle_video.mp4</a>. Supplied GRAPPLE module presentation. Figures reproduced from the video; chapter times are approximate.</li>
+<li><a href="../content/ONR_Intro_slides.pptx" download>ONR introduction slides</a>. Program, research challenge, four-module workflow, and team; slides 1–4.</li>
+</ol>
+<p>Results on this page are attributed to the supplied presentations. The materials do not include full benchmark protocols or bibliographic records for every component.</p>
+</section>
+</article>
+</div>
+<nav class="module-navigation" aria-label="Research modules"><a href="environment.html">01 Environment Abstraction</a><a href="human.html">02 Physics Informed Human Model</a><a href="vehicle.html" aria-current="page">03 Neuro-Symbolic Vehicle Model</a><a href="coa.html">04 COA Generation</a>
+</nav>
+</main>
+<footer><a class="brand" href="../index.html">ONR—GRAPPLE</a>
+<p>University at Buffalo · AI2OPS</p><a href="https://github.com/onr-grapple">GitHub organization ↗</a>
+</footer>
+</body></html>

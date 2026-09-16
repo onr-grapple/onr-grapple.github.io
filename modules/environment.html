@@ -1,0 +1,98 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101713"><title>Environment Abstraction | ONR-GRAPPLE</title>
+<meta name="description" content="Hierarchical terrain representations for efficient off-road route planning.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="../index.html">{ } ONR—GRAPPLE</a>
+<nav aria-label="Primary navigation"><a href="../index.html#projects">Modules</a><a href="../index.html#videos">Videos</a><a href="../index.html#mission">Team &amp; program</a>
+</nav>
+</header>
+<main id="main">
+<div class="research-hero"><a class="back-link" href="../index.html#projects">← All research modules</a>
+<p class="eyebrow">Module 01 / Graph-theoretic environment representations</p>
+<h1>Environment Abstraction</h1>
+<p class="research-subtitle">Hierarchical terrain representations for efficient off-road route planning.</p>
+<div class="hero-actions"><a class="primary-action" href="#source-video">Watch demonstration</a><a class="text-action" href="../content/ONR_Intro_slides.pptx" download>Introduction slides ↗</a>
+</div>
+</div>
+<div class="research-layout">
+<aside class="contents">
+<p>On this page</p><a href="#abstract">Abstract</a><a href="#section-0">Research problem</a><a href="#section-1">Representation and planning method</a><a href="#section-2">Weather updates and module interfaces</a><a href="#section-3">Reported demonstration results</a><a href="#figures">Research figures</a><a href="#source-video">Video &amp; chapters</a><a href="#sources">Sources</a>
+</aside>
+<article class="research-body">
+<section id="abstract">
+<p class="eyebrow">Research overview</p>
+<h2>Abstract</h2>
+<p class="abstract">Environment abstraction converts dense elevation and landcover rasters into a representation that supports long-distance planning while retaining local terrain detail. The demonstration presents HOPHY, Hierarchical Off-Road Planning using Hypergraph, and connects its coarse-to-fine routing process to agent-specific human and vehicle mobility costs. Local weather changes update route suitability so the system can revise paths and supply routes to the course-of-action planner.</p>
+</section>
+<section id="section-0">
+<h2>Research problem</h2>
+<p>Mission-scale raster maps contain millions of cells. Searching this terrain repeatedly for different agents and task pairs is expensive. GRAPPLE organizes similar terrain into connected regions, allowing a planner to reason over larger areas before refining the selected route.</p>
+<p>The demonstration covers a 115.2 km × 64.8 km mission area with a 3,840 × 2,160 raster at 30 m resolution, approximately 7,465 km². Elevation and landcover provide complementary information about terrain geometry and surface type. <a href="#source-video">[1, 1:00–1:30]</a></p>
+</section>
+<section id="section-1">
+<h2>Representation and planning method</h2>
+<ol>
+<li><strong>Terrain inputs.</strong> Elevation and landcover maps describe the mission area, including vegetation, barren land, built-up areas, wetlands, and water.</li>
+<li><strong>Local semantic regions.</strong> Geometrically connected Semantic Nodes group small areas with similar terrain characteristics.</li>
+<li><strong>Coarse regions.</strong> A second layer groups local regions to accelerate long-distance search.</li>
+<li><strong>Coarse-to-fine routing.</strong> The planner first selects a coarse route, then refines the relevant regions to recover local detail.</li>
+<li><strong>Agent-specific costs.</strong> Human and vehicle models produce different routes between the same task pair.</li>
+</ol>
+<p>The video identifies the representation as HOPHY and illustrates both abstraction layers and the resulting coarse and refined paths. <a href="#source-video">[1, 1:30–2:15]</a></p>
+</section>
+<section id="section-2">
+<h2>Weather updates and module interfaces</h2>
+<p>Localized heavy rain makes part of a nominal route less suitable. The demonstration updates the affected representation and replans the human and vehicle paths around the rain region. Terrain structure and agent-specific traversal costs jointly determine the revised route.</p>
+<p>This module supplies the route information used by COA generation. The human and vehicle modules supply mobility costs, while environmental changes feed back into route planning. <a href="#source-video">[1, 2:15–2:45]</a></p>
+</section>
+<section id="section-3">
+<h2>Reported demonstration results</h2>
+<div class="table-wrap">
+<table><caption>Values displayed in the abstraction video</caption>
+<thead>
+<tr><th>Experiment</th><th>Reported value</th><th>Context</th></tr></thead>
+<tbody>
+<tr><td>Single task-pair route</td><td>0.013 s</td><td>Human and vehicle route demonstration</td></tr>
+<tr><td>Localized weather update</td><td>0.09 s</td><td>Rain-region update; revised route also labeled 0.013 s</td></tr>
+<tr><td>Full mission routing</td><td>380 routes per agent</td><td>Vehicle and human route sets</td></tr>
+<tr><td>Combined route computation</td><td>0.48 s</td><td>0.00063 s per path, as reported</td></tr>
+<tr><td>Ground-map comparison</td><td>2,240× faster</td><td>Ground-map baseline: 1.42 s per path</td></tr></tbody></table>
+</div>
+<p>The introduction separately reports <strong>1,200× faster planning</strong> and a <strong>30 ms weather update</strong>. These are overview claims, whereas the values above belong to the specific video demonstration. They are retained separately because the supplied materials do not establish identical benchmark conditions. <a href="#sources">[1, 2:00–2:45; 2, slide 3]</a></p>
+</section>
+<section id="figures">
+<h2>Research figures</h2>
+<figure><a href="../assets/images/environment-method.jpg"><img src="../assets/images/environment-method.jpg" alt="The two abstraction layers: local semantic regions and coarse regions. Video frame at approximately 1:37." loading="lazy" width="1600" height="900"></a><figcaption>The two abstraction layers: local semantic regions and coarse regions. Video frame at approximately 1:37.</figcaption>
+</figure>
+<figure><a href="../assets/images/environment-results.jpg"><img src="../assets/images/environment-results.jpg" alt="Full-mission route planning and the reported comparison with ground-map planning. Video frame at approximately 2:37." loading="lazy" width="1600" height="900"></a><figcaption>Full-mission route planning and the reported comparison with ground-map planning. Video frame at approximately 2:37.</figcaption>
+</figure>
+</section>
+<section id="source-video">
+<h2>Module demonstration</h2>
+<p>Full supplied presentation · 3:00. Chapter links open the video at the indicated point. The written sections above provide a companion description of the methods and demonstrations.</p><video controls preload="none" poster="../assets/images/environment-method.jpg" aria-label="Environment Abstraction demonstration"><source src="../assets/media/environment.mp4" type="video/mp4">Your browser does not support video. <a href="../assets/media/environment.mp4">Download the demonstration</a>.</video>
+<div class="chapter-list"><a href="../assets/media/environment.mp4#t=52">0:52 · Mission area and inputs</a><a href="../assets/media/environment.mp4#t=90">1:30 · Hierarchical abstraction</a><a href="../assets/media/environment.mp4#t=110">1:50 · Coarse-to-fine planning</a><a href="../assets/media/environment.mp4#t=125">2:05 · Agent-specific routes</a><a href="../assets/media/environment.mp4#t=140">2:20 · Weather update</a><a href="../assets/media/environment.mp4#t=155">2:35 · Full mission results</a>
+</div>
+</section>
+<section id="sources">
+<h2>Sources and research context</h2>
+<ol>
+<li><a href="../assets/media/environment.mp4">Abstraction_Video.mp4</a>. Supplied GRAPPLE module presentation. Figures reproduced from the video; chapter times are approximate.</li>
+<li><a href="../content/ONR_Intro_slides.pptx" download>ONR introduction slides</a>. Program, research challenge, four-module workflow, and team; slides 1–4.</li>
+</ol>
+<p>Results on this page are attributed to the supplied presentations. The materials do not include full benchmark protocols or bibliographic records for every component.</p>
+</section>
+</article>
+</div>
+<nav class="module-navigation" aria-label="Research modules"><a href="environment.html" aria-current="page">01 Environment Abstraction</a><a href="human.html">02 Physics Informed Human Model</a><a href="vehicle.html">03 Neuro-Symbolic Vehicle Model</a><a href="coa.html">04 COA Generation</a>
+</nav>
+</main>
+<footer><a class="brand" href="../index.html">ONR—GRAPPLE</a>
+<p>University at Buffalo · AI2OPS</p><a href="https://github.com/onr-grapple">GitHub organization ↗</a>
+</footer>
+</body></html>

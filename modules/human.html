@@ -1,0 +1,97 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101713"><title>Physics Informed Human Model | ONR-GRAPPLE</title>
+<meta name="description" content="Terrain, load, weather, and energy reserves in human traversal planning.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="../index.html">{ } ONR—GRAPPLE</a>
+<nav aria-label="Primary navigation"><a href="../index.html#projects">Modules</a><a href="../index.html#videos">Videos</a><a href="../index.html#mission">Team &amp; program</a>
+</nav>
+</header>
+<main id="main">
+<div class="research-hero"><a class="back-link" href="../index.html#projects">← All research modules</a>
+<p class="eyebrow">Module 02 / Human mobility and energetics</p>
+<h1>Physics Informed Human Model</h1>
+<p class="research-subtitle">Terrain, load, weather, and energy reserves in human traversal planning.</p>
+<div class="hero-actions"><a class="primary-action" href="#source-video">Watch demonstration</a><a class="text-action" href="../content/ONR_Intro_slides.pptx" download>Introduction slides ↗</a>
+</div>
+</div>
+<div class="research-layout">
+<aside class="contents">
+<p>On this page</p><a href="#abstract">Abstract</a><a href="#section-0">Research problem and inputs</a><a href="#section-1">Physiological model</a><a href="#section-2">Obstacles and weather</a><a href="#section-3">Simulated mission at 29 Palms</a><a href="#section-4">Reported learning results and future customization</a><a href="#figures">Research figures</a><a href="#source-video">Video &amp; chapters</a><a href="#sources">Sources</a>
+</aside>
+<article class="research-body">
+<section id="abstract">
+<p class="eyebrow">Research overview</p>
+<h2>Abstract</h2>
+<p class="abstract">The human traversal module estimates movement time and energy expenditure across complex terrain. It combines an instantaneous metabolic workload model with a dynamic representation of fatigue and recovery. Body weight, carried load, speed, terrain grade, surface type, and environmental conditions inform the traversal cost. The presentation also describes physics-infused machine learning for adapting pacing to weather.</p>
+</section>
+<section id="section-0">
+<h2>Research problem and inputs</h2>
+<p>A route for a dismounted person must account for more than distance. Slope, surface resistance, obstacles, carried equipment, and the ability to recover affect both the pace and the energy needed to complete a mission.</p><dl class="research-facts">
+<div><dt>Human factors</dt><dd>Body weight, external load, movement speed</dd>
+</div>
+<div><dt>Terrain factors</dt><dd>Terrain type and grade</dd>
+</div>
+<div><dt>Environmental inputs</dt><dd>Surface pressure, wet-bulb temperature, soil moisture; the later learning diagram also includes wind speed</dd>
+</div>
+<div><dt>Outputs</dt><dd>Traversal time, energy expenditure, pace, and simulated energy reserves</dd>
+</div></dl>
+<p><a href="#source-video">[1, 0:45–1:45; 2:45–3:00]</a></p>
+</section>
+<section id="section-1">
+<h2>Physiological model</h2>
+<p>The presentation combines a USARIEM physiological model of instantaneous exertion with an endurance model adapted from cycling. Metabolic power depends on body mass, carried load, movement speed, terrain type, and grade. Ascent increases metabolic demand, while descent introduces braking costs.</p>
+<p>A three-tank hydraulic model represents aerobic, fast anaerobic, and slow anaerobic reserves. Energy flow, tank capacities, and maximum flow rates describe how exertion and recovery evolve during a traversal. The model therefore links local workload to the person’s changing capacity to sustain movement. <a href="#source-video">[1, 1:00–1:15]</a></p>
+</section>
+<section id="section-2">
+<h2>Obstacles and weather</h2>
+<p>The obstacle treatment uses activity expenditure from the Ainsworth Compendium as a modular input. The examples include wading and climbing. Surface resistance varies by terrain type, and weather can trigger dynamic surface reclassification.</p>
+<p>The learning extension maps weather telemetry into pacing controls, including boosted speed, nominal pace, and recovery time. These controls interact with the energy-reserve model rather than replacing the physiological workload calculation. <a href="#source-video">[1, 1:15–1:45; 2:45–3:00]</a></p>
+</section>
+<section id="section-3">
+<h2>Simulated mission at 29 Palms</h2>
+<p>The demonstration compares <strong>light infantry: 70 kg body mass + 15 kg payload</strong> with <strong>armored infantry: 95 kg body mass + 45 kg payload</strong>. It displays terrain traversal, mud, water, snow, and a wall, alongside pace histories and simulated energy reserves. Water depth is labeled 0.45 m and the wall height 2.0 m.</p>
+<p>The animation shows how the two profiles progress differently through the mission. Its elapsed times and accumulated energy values change throughout the sequence, so individual frames are illustrative states rather than aggregate evaluation statistics. This is explicitly a <strong>simulated mission</strong>. <a href="#source-video">[1, 1:45–2:45]</a></p>
+</section>
+<section id="section-4">
+<h2>Reported learning results and future customization</h2>
+<p>The final technical slide reports improvements from physics-infused machine learning: <strong>2.2 minutes in average error</strong>, <strong>3.2 minutes in typical spread across hikes</strong>, and <strong>54.2 minutes in worst-case error</strong>. These describe prediction-error improvements per hike, not reductions in mission duration. The slide does not specify the dataset size or full comparison protocol.</p>
+<p>Future customization directions listed in the presentation include age, height, heart rate, equipment loading, sex, and nutrition. These are presented as data-enrichment opportunities rather than demonstrated inputs to the reported model. <a href="#source-video">[1, 2:45–3:00]</a></p>
+</section>
+<section id="figures">
+<h2>Research figures</h2>
+<figure><a href="../assets/images/human-method.jpg"><img src="../assets/images/human-method.jpg" alt="Instantaneous workload and the hydraulic energy-reserve model. Video frame at approximately 1:07." loading="lazy" width="1600" height="900"></a><figcaption>Instantaneous workload and the hydraulic energy-reserve model. Video frame at approximately 1:07.</figcaption>
+</figure>
+<figure><a href="../assets/images/human-demo.jpg"><img src="../assets/images/human-demo.jpg" alt="Simulated light and armored infantry traversal at 29 Palms. Video frame at approximately 2:07." loading="lazy" width="1600" height="900"></a><figcaption>Simulated light and armored infantry traversal at 29 Palms. Video frame at approximately 2:07.</figcaption>
+</figure>
+<figure><a href="../assets/images/human-weather.jpg"><img src="../assets/images/human-weather.jpg" alt="Weather-driven pacing, reported error improvements, and proposed customization. Video frame at approximately 2:52." loading="lazy" width="1600" height="900"></a><figcaption>Weather-driven pacing, reported error improvements, and proposed customization. Video frame at approximately 2:52.</figcaption>
+</figure>
+</section>
+<section id="source-video">
+<h2>Module demonstration</h2>
+<p>Full supplied presentation · 3:09. Chapter links open the video at the indicated point. The written sections above provide a companion description of the methods and demonstrations.</p><video controls preload="none" poster="../assets/images/human-demo.jpg" aria-label="Physics Informed Human Model demonstration"><source src="../assets/media/human.mp4" type="video/mp4">Your browser does not support video. <a href="../assets/media/human.mp4">Download the demonstration</a>.</video>
+<div class="chapter-list"><a href="../assets/media/human.mp4#t=45">0:45 · Human, terrain, and weather factors</a><a href="../assets/media/human.mp4#t=60">1:00 · Energetics and energy reserves</a><a href="../assets/media/human.mp4#t=75">1:15 · Terrain and obstacles</a><a href="../assets/media/human.mp4#t=105">1:45 · Simulated traversal</a><a href="../assets/media/human.mp4#t=165">2:45 · Learning and customization</a>
+</div>
+</section>
+<section id="sources">
+<h2>Sources and research context</h2>
+<ol>
+<li><a href="../assets/media/human.mp4">Human_video_2.mp4</a>. Supplied GRAPPLE module presentation. Figures reproduced from the video; chapter times are approximate.</li>
+<li><a href="../content/ONR_Intro_slides.pptx" download>ONR introduction slides</a>. Program, research challenge, four-module workflow, and team; slides 1–4.</li>
+</ol>
+<p>Results on this page are attributed to the supplied presentations. The materials do not include full benchmark protocols or bibliographic records for every component.</p>
+</section>
+</article>
+</div>
+<nav class="module-navigation" aria-label="Research modules"><a href="environment.html">01 Environment Abstraction</a><a href="human.html" aria-current="page">02 Physics Informed Human Model</a><a href="vehicle.html">03 Neuro-Symbolic Vehicle Model</a><a href="coa.html">04 COA Generation</a>
+</nav>
+</main>
+<footer><a class="brand" href="../index.html">ONR—GRAPPLE</a>
+<p>University at Buffalo · AI2OPS</p><a href="https://github.com/onr-grapple">GitHub organization ↗</a>
+</footer>
+</body></html>
